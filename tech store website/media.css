@@ -1,0 +1,48 @@
+@media (max-width: 576px) {
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 35px;
+  }
+.navbar-nav {
+    margin-top: 20px;
+  }
+ .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+  } 
+  .hero {
+    min-height: auto;
+    padding-top: 120px;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .category-filter {
+    text-align: center;
+  }
+
+  .category-filter .btn {
+    margin-bottom: 10px;
+  }
+}
+/* MOBILE FIXES */
+@media (max-width: 991px) {
+
+  .navbar-nav {
+    margin-top: 20px;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+  }
+}

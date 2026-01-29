@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Tech Store</title>
+
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="stylesheet" href="aos-master/dist/aos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top advanced-navbar">
+  <div class="container">
+    <!-- LOGO -->
+    <a class="navbar-brand fw-bold" href="#">
+      Tech<span class="text-accent">Nova</span>
+    </a>
+
+    <!-- TOGGLER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+      <!-- LINKS -->
+      <ul class="navbar-nav ms-auto gap-lg-4 text-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <!-- ACTIONS -->
+      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+        <span class="nav-icon"><i class="bi bi-heart" style="color: red;"></i> <span id="wishCount">0</span></span>
+        <span class="nav-icon"><i class="bi bi-cart"></i> <span id="cartCount">0</span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+    <section class="hero-modern">
+  <div class="container" data-aos="fade-down-right"    data-aos-duration="2000">
+    <div class="row align-items-center min-vh-100">
+
+      <!-- TEXT -->
+      <div class="col-lg-6 text-center text-lg-start">
+        <span class="hero-badge">Modern Tech Store</span>
+
+        <h1 class="hero-title">
+          Next-Gen <span>Tech</span><br>
+          Products
+        </h1>
+
+        <p class="hero-subtitle">
+          Discover high-performance laptops, smartphones, and accessories
+          designed for speed, reliability, and modern users.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-accent">Shop Products</a>
+          <a href="#whyus" class="btn btn-accent">Why Choose Us</a>
+        </div>
+      </div>
+
+      <!-- VISUAL -->
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <div class="hero-mockup">
+          <img src="img/t.png" alt="Tech Store UI" class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- catogaries -->
+<section class="categories">
+  <div class="container "  data-aos="fade-down-left"    data-aos-duration="2000">
+    <h2 class="text-center mb-5">Shop by Category</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="cat-card">
+          <h4>Laptops</h4>
+          <p>Power & performance</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="cat-card">
+          <h4>Mobiles</h4>
+          <p>Smart & sleek</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="cat-card">
+          <h4>Accessories</h4>
+          <p>Complete your setup</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container "data-aos="fade-down-right"    data-aos-duration="2000">
+<div class="col-12 col-sm-12 col-lg-12">
+    <!-- FILTER + SORT -->
+    <div class="d-flex flex-wrap justify-content-between mb-4">
+      <div class="category-filter">
+        <button data-cat="all" class="btn btn-outline-light active">All</button>
+        <button data-cat="laptop" class="btn btn-outline-light">Laptops</button>
+        <button data-cat="mobile" class="btn btn-outline-light">Mobiles</button>
+        <button data-cat="Accessories" class="btn btn-outline-light">Accessories</button>
+      </div>
+
+      <select id="sortPrice" class="form-select w-auto bg-dark text-light">
+        <option value="">Sort</option>
+        <option value="low">Price: Low → High</option>
+        <option value="high">Price: High → Low</option>
+      </select>
+    </div>
+    <div class="row g-4" id="productList"></div>
+  </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal fade" id="quickViewModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header border-0">
+        <h5 id="mTitle"></h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="mImg" class="img-fluid mb-3">
+        <h4 class="text-accent" id="mPrice"></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="why-us-advanced" id="whyus" >
+  <div class="container"  data-aos="fade-down-right"    data-aos-duration="2000">
+
+    <div class="text-center mb-5">
+      <h2>Why Choose <span class="text-accent">TechNova</span></h2>
+      <p class="text-light">
+        We don’t just sell tech — we deliver performance, trust and experience.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="icon"><i class="bi bi-lightning-charge" style="color: yellow;"></i></div>
+          <h5>High Performance</h5>
+          <p>Optimized devices built for speed and multitasking.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="icon"><i class="bi bi-shield-check"></i></div>
+          <h5>Warranty Protection</h5>
+          <p>Up to 1 year official warranty on all products.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="icon"><i class="bi bi-truck" style="color: green;"></i></div>
+          <h5>Fast Delivery</h5>
+          <p>Nationwide shipping with real-time tracking.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="why-card">
+          <div class="icon"><i class="bi bi-headset"></i></div>
+          <h5>24/7 Support</h5>
+          <p>Our experts are available anytime you need help.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- testimonials -->
+<section class="testimonials" id="about">
+  <div class="container"  data-aos="fade-up"    data-aos-duration="2000">
+    <h2 class="text-center mb-5">What Customers Say</h2>
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="testimonial-card">
+          <p>"Amazing quality and fast delivery."</p>
+          <h6>- Ali Khan</h6>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="testimonial-card">
+          <p>"Best tech store I’ve used."</p>
+          <h6>- Sara Ahmed</h6>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="testimonial-card">
+          <p>"Highly recommended!"</p>
+          <h6>- Usman</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- news letter -->
+ <section class="newsletter">
+  <div class="container text-center"  data-aos="fade-down-right"    data-aos-duration="2000">
+    <h2>Stay Updated</h2>
+    <p class="text-light">Subscribe for latest tech updates</p>
+
+    <div class="d-flex justify-content-center gap-2 flex-wrap">
+      <input type="email" class="form-control w-50 bg-dark text-light" placeholder="Enter email">
+      <button class="btn btn-accent">Subscribe</button>
+    </div>
+  </div>
+</section>
+<!-- /* footer */ -->
+<footer class="footer-advanced">
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- BRAND -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <h4 class="footer-logo">Tech<span class="text-accent">Nova</span></h4>
+        <p class="text-light">
+          Premium tech products built for performance, reliability and modern users.
+        </p>
+      </div>
+
+      <!-- LINKS -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <h6 class="footer-title">Company</h6>
+        <ul class="footer-links">
+          <li><a href="#" class="text-light">About</a></li>
+          <li><a href="#" class="text-light">Careers</a></li>
+          <li><a href="#" class="text-light" >Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- PRODUCTS -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <h6 class="footer-title">Products</h6>
+        <ul class="footer-links">
+          <li><a href="#" class="text-light">Laptops</a></li>
+          <li><a href="#" class="text-light">Mobiles</a></li>
+          <li><a href="#"class="text-light">Accessories</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <h6 class="footer-title" id="contact">Contact</h6>
+        <p class="text-light mb-1"><i class="bi bi-geo-alt"></i> Hyderabad, Pakistan</p>
+        <p class="text-light mb-1"><i class="bi bi-envelope"></i> support@technova.com</p>
+        <p class="text-light"><i class="bi bi-telephone"></i> +92 300 1234567</p>
+
+        <div class="footer-social mt-3">
+          <a href="#"><i class="bi bi-twitter-x" style="color: #14171A;"></i></a>
+          <a href="#"><i class="bi bi-facebook" style="color: #4267B2;"></i></a>
+          <a href="#"><i class="bi bi-instagram" style="color: #C13584;"></i></a>
+          <a href="#"><i class="bi bi-linkedin" style="color: #0077B5;"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-line">
+
+    <div class="text-center text-light small">
+      © 2025 DarkTech. All rights reserved.
+      made by[ M.Anus Siddiqui ]
+    </div>
+
+  </div>
+</footer>
+
+
+
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<script src="script.js"></script>
+<script src="aos-master/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>
